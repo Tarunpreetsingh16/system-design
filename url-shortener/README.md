@@ -14,3 +14,14 @@
 - Key will be returned from the cache. If nothing in cache, it will load it from DB. Most of the time, there will be multiple keys in the cache, even on the service start. This will be a backup to get the key from DB.
 - URL shortener service uses that key and maps it to the URL. Then that mapping is stored in the DB.
 - The response is sent back through the opened connection, which contains the new shortened URL.
+
+
+### Key Generation Strategy
+We will go ahead with UUID
+Steps -
+- Generate UUID 
+- Check in used and unused keys if that keys exist
+- If it does not exist, we will put it in the unused keys table and also save it in cache
+- If it exists, we will drop that key and generate a new one
+
+For demonstration purposes, we will create a threshold of 70% of upper limit of estimated keys that we can have (50 keys). If it goes below 70% of 50 in DB, we will produce more keys. 
