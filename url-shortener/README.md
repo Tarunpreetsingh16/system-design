@@ -25,4 +25,4 @@ Steps -
 - If it does not exist, we will put it in the unused keys table and also save it in cache
 - If it exists, we will drop that key and generate a new one
 
-For demonstration purposes, we will create a threshold of 70% of upper limit of estimated keys that we can have (50 keys). If it goes below 70% of 50 in DB, we will produce more keys. 
+For demonstration purposes, we will create a threshold of 70% of upper limit of estimated keys that we can have (50 keys). If it goes below 70% of 50 in Cache, we will produce more keys. 
